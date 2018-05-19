@@ -46,7 +46,7 @@ namespace XamEffects.iOS
 
         private void TapAction()
         {
-           _tapCommand?.Execute(_tapParameter);
+            _tapCommand?.Execute(_tapParameter);
         }
 
         private void LongTapAction(UIGestureRecognizerState state, bool inside)
@@ -56,7 +56,7 @@ namespace XamEffects.iOS
                 case UIGestureRecognizerState.Began:
                     break;
                 case UIGestureRecognizerState.Ended:
-					if (!inside) return;
+                    if (!inside) return;
                     if (_longCommand == null)
                         TapAction();
                     else
@@ -105,7 +105,7 @@ namespace XamEffects.iOS
 
         public static void Init()
         {
-            
+
         }
     }
 }

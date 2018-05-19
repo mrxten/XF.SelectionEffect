@@ -80,7 +80,7 @@ namespace XamEffects.iOS
             }
             _alpha = color.A < 1.0 ? 1 : 0.3;
 
-            _layer = new UIView {BackgroundColor = color.ToUIColor()};
+            _layer = new UIView { BackgroundColor = color.ToUIColor() };
         }
 
         private async Task TapAnimation(double duration, double start = 1, double end = 0, bool remove = true)
@@ -89,9 +89,10 @@ namespace XamEffects.iOS
             {
                 _layer.Frame = new CGRect(0, 0, Container.Bounds.Width, Container.Bounds.Height);
                 _view.AddSubview(_layer);
-	            _view.BringSubviewToFront(_layer);
+                _view.BringSubviewToFront(_layer);
                 _layer.Alpha = (float)start;
-                await UIView.AnimateAsync(duration, () => {
+                await UIView.AnimateAsync(duration, () =>
+                {
                     _layer.Alpha = (float)end;
                 });
                 if (remove)
