@@ -80,8 +80,8 @@ Add command to views.
 |TapParameter|bindable attached|object|null|Tap command parameter|
 |LongTap|bindable attached|ICommand|null|Long tap command|
 |LongTapParameter|bindable attached|object|null|Long tap command parameter|
-|HoldTap|bindable attached|ICommand|null|Hold tap command|
-|HoldTapParameter|bindable attached|object|null|Hold tap command parameter|
+|HoldTap|bindable attached|ICommand|null|Hold command|
+|HoldTapParameter|bindable attached|object|null|Hold command parameter|
     
 ### Example 
 ```xml
