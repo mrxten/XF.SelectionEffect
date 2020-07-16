@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27128.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamEffects.iOS", "XamEffects.iOS\XamEffects.iOS.csproj", "{076444AB-1145-43AE-8ABB-99F0F231DF1A}"
 EndProject
@@ -65,6 +65,7 @@ Global
 		{D98B0F41-1C33-4D39-B493-42A9B3C4E788}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{F1EF4EEB-8A87-4CAE-8D13-D541B9AD8F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F1EF4EEB-8A87-4CAE-8D13-D541B9AD8F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1EF4EEB-8A87-4CAE-8D13-D541B9AD8F5B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{F1EF4EEB-8A87-4CAE-8D13-D541B9AD8F5B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{F1EF4EEB-8A87-4CAE-8D13-D541B9AD8F5B}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{F1EF4EEB-8A87-4CAE-8D13-D541B9AD8F5B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
@@ -78,6 +79,7 @@ Global
 		{4477D686-463D-4198-8466-A4949CBCC7CF}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{4477D686-463D-4198-8466-A4949CBCC7CF}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{4477D686-463D-4198-8466-A4949CBCC7CF}.Debug|iPhone.Build.0 = Debug|iPhone
+		{4477D686-463D-4198-8466-A4949CBCC7CF}.Debug|iPhone.Deploy.0 = Debug|iPhone
 		{4477D686-463D-4198-8466-A4949CBCC7CF}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{4477D686-463D-4198-8466-A4949CBCC7CF}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{4477D686-463D-4198-8466-A4949CBCC7CF}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>XamEffects</id>
-    <version>1.6.3</version>
+    <version>1.7.0</version>
     <authors>Vladislav Zhukov</authors>
     <owners>mrxten</owners>
     <licenseUrl>https://github.com/mrxten/XamEffects/blob/master/LICENSE</licenseUrl>
@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Xamarin Forms UI effects.
 Release notes: https://github.com/mrxten/XamEffects/blob/master/ReleaseNotes.md</description>
-    <copyright>Copyright 2019</copyright>
+    <copyright>Copyright 2020</copyright>
     <tags>xamarin xamarin-forms effects</tags>
     <dependencies>
       <dependency id="Xamarin.Forms" version="2.5.0.77107" />

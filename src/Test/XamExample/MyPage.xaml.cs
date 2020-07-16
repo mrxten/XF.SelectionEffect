@@ -9,10 +9,22 @@ namespace XamExample {
         public MyPage() {
             InitializeComponent();
 
-            var c = 0;
+            var tapCount = 0;
             Commands.SetTap(touch, new Command(() => {
-                c++;
-                text.Text = c.ToString();
+                tapCount++;
+                text.Text = "tap " + tapCount;
+            }));
+
+            var longTapCount = 0;
+            Commands.SetLongTap(touch, new Command(() => {
+                longTapCount++;
+                text.Text = "longTap " + longTapCount;
+            }));
+
+            var holdCount = 0;
+            Commands.SetHold(touch, new Command(() => {
+                holdCount++;
+                text.Text = "holdCount " + holdCount;
             }));
         }
     }

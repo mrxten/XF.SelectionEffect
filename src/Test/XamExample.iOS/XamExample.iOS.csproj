@@ -163,7 +163,14 @@
     <ProjectReference Include="..\..\XamEffects.iOS\XamEffects.iOS.csproj">
       <Project>{076444AB-1145-43AE-8ABB-99F0F231DF1A}</Project>
       <Name>XamEffects.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadXFormsNugetUpgradeInfoBarXamExampleiOSHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

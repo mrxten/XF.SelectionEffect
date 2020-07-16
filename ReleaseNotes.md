@@ -1,5 +1,8 @@
 # Release notes
 
+## 1.7.0
+Added the Hold command for both iOS and Android
+
 ## 1.6.3
 Small internal bugfixes.
 

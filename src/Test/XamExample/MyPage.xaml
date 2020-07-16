@@ -1,23 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    xmlns ="http://xamarin.com/schemas/2014/forms"
+    x:Class="XamExample.MyPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
-    x:Class="XamExample.MyPage">
-    <xe:BorderView 
-          HeightRequest="120"
-          WidthRequest="200"
-          HorizontalOptions="Center"
-          VerticalOptions="Center"
-          BackgroundColor="LightGray"
-          CornerRadius="15"
-          BorderColor="Green"
-          BorderWidth="2"
-          xe:TouchEffect.Color="Red"
-          x:Name="touch">
-        <Label x:Name="text"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Text="0"/>
+    xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects">
+    <xe:BorderView
+        x:Name="touch"
+        xe:TouchEffect.Color="Red"
+        BackgroundColor="LightGray"
+        BorderColor="Green"
+        BorderWidth="2"
+        CornerRadius="15"
+        HeightRequest="120"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="200">
+        <Label
+            x:Name="text"
+            HorizontalOptions="Center"
+            Text="0"
+            VerticalOptions="Center" />
     </xe:BorderView>
 </ContentPage>
