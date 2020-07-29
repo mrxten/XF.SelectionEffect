@@ -6,26 +6,38 @@ using XamEffects;
 
 namespace XamExample {
     public partial class MyPage : ContentPage {
+
+        private int _tapCount;
+        private int _longTapCount;
+        private int _holdCount;
+
         public MyPage() {
             InitializeComponent();
 
-            var tapCount = 0;
-            Commands.SetTap(touch, new Command(() => {
-                tapCount++;
-                text.Text = "tap " + tapCount;
-            }));
+            Commands.SetTap(tap, new Command(TapHandler));
+            Commands.SetLongTap(longTap, new Command(LongTapHandler));
+            Commands.SetHold(hold, new Command(HoldHandler));
 
-            var longTapCount = 0;
-            Commands.SetLongTap(touch, new Command(() => {
-                longTapCount++;
-                text.Text = "longTap " + longTapCount;
-            }));
 
-            var holdCount = 0;
-            Commands.SetHold(touch, new Command(() => {
-                holdCount++;
-                text.Text = "holdCount " + holdCount;
-            }));
+            Commands.SetTap(all, new Command(TapHandler));
+            Commands.SetLongTap(all, new Command(LongTapHandler));
+            Commands.SetHold(all, new Command(HoldHandler));
+        }
+
+        private void TapHandler(object obj)
+        {
+            _tapCount++;
+            result.Text = "Tap " + _tapCount;
+        }
+        private void LongTapHandler(object obj)
+        {
+            _longTapCount++;
+            result.Text = "Long Tap " + _longTapCount;
+        }
+        private void HoldHandler(object obj)
+        {
+            _holdCount++;
+            result.Text = "Hold " + _holdCount;
         }
     }
 }
