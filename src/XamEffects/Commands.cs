@@ -119,7 +119,7 @@ namespace XamEffects {
 
             var eff = view.Effects.FirstOrDefault(e => e is CommandsRoutingEffect);
 
-            if (GetTap(bindable) != null || GetLongTap(bindable) != null) {
+            if (GetTap(bindable) != null || GetLongTap(bindable) != null || GetHold(bindable) != null) {
                 view.InputTransparent = false;
 
                 if (eff != null) return;
