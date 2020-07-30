@@ -17,6 +17,7 @@ namespace XamEffects.Droid {
         public bool IsDisposed => (Container as IVisualElementRenderer)?.Element == null;
 
         DateTime _tapTime;
+        private System.Timers.Timer _holdTimer;
         readonly Rect _rect = new Rect();
         readonly int[] _location = new int[2];
 
@@ -34,6 +35,7 @@ namespace XamEffects.Droid {
             switch (args.Event.Action) {
                 case MotionEventActions.Down:
                     _tapTime = DateTime.Now;
+                    StartHoldTimer();
                     break;
 
                 case MotionEventActions.Up:
@@ -44,6 +46,7 @@ namespace XamEffects.Droid {
                         else
                             ClickHandler();
                     }
+                    StopHoldTimer();
                     break;
             }
         }
@@ -75,8 +78,49 @@ namespace XamEffects.Droid {
                 cmd.Execute(param);
         }
 
+        void StartHoldTimer()
+        {
+            StopHoldTimer();
+
+            _holdTimer = new System.Timers.Timer
+            {
+                Interval = 800,
+                AutoReset = false
+            };
+            _holdTimer.Elapsed += _holdTimer_Elapsed;
+            _holdTimer.Start();
+        }
+
+        void StopHoldTimer()
+        {
+            if (_holdTimer != null)
+            {
+                _holdTimer.Stop();
+                _holdTimer.Dispose();
+                _holdTimer = null;
+            }
+        }
+
+        void _holdTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            // UI Dispatcher because the timer runs on a different thread
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                HoldHandler();
+            });
+        }
+
+        void HoldHandler()
+        {
+            var cmd = Commands.GetHold(Element);
+            var param = Commands.GetHoldParameter(Element);
+            if (cmd?.CanExecute(param) ?? false)
+                cmd.Execute(param);
+        }
+
         protected override void OnDetached() {
             if (IsDisposed) return;
+            StopHoldTimer();
             TouchCollector.Delete(View, OnTouch);
         }
     }

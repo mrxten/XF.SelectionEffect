@@ -80,6 +80,8 @@ Add command to views.
 |TapParameter|bindable attached|object|null|Tap command parameter|
 |LongTap|bindable attached|ICommand|null|Long tap command|
 |LongTapParameter|bindable attached|object|null|Long tap command parameter|
+|HoldTap|bindable attached|ICommand|null|Hold command|
+|HoldTapParameter|bindable attached|object|null|Hold command parameter|
     
 ### Example 
 ```xml
@@ -94,7 +96,8 @@ Add command to views.
           WidthRequest="200"
           BackgroundColor="LightGray" 
           xe:Commands.Tap="{Binding TapCommand}"
-          xe:Commands.LongTap="{Binding LongTapCommand}">
+          xe:Commands.LongTap="{Binding LongTapCommand}"
+          xe:Commands.Hold="{Binding HoldTapCommand}">
         <Label Text="Test commands"
                HorizontalOptions="Center"
                VerticalOptions="Center"/>

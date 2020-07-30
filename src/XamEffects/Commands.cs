@@ -76,13 +76,50 @@ namespace XamEffects {
             return view.GetValue(LongTapParameterProperty);
         }
 
+        public static readonly BindableProperty HoldProperty =
+            BindableProperty.CreateAttached(
+                "Hold",
+                typeof(ICommand),
+                typeof(Commands),
+                default(ICommand),
+                propertyChanged: PropertyChanged
+            );
+
+        public static void SetHold(BindableObject view, ICommand value)
+        {
+            view.SetValue(HoldProperty, value);
+        }
+
+        public static ICommand GetHold(BindableObject view)
+        {
+            return (ICommand)view.GetValue(HoldProperty);
+        }
+
+        public static readonly BindableProperty HoldParameterProperty =
+            BindableProperty.CreateAttached(
+                "HoldParameter",
+                typeof(object),
+                typeof(Commands),
+                default(object)
+            );
+
+        public static void SetHoldParameter(BindableObject view, object value)
+        {
+            view.SetValue(HoldParameterProperty, value);
+        }
+
+        public static object GetHoldParameter(BindableObject view)
+        {
+            return view.GetValue(HoldParameterProperty);
+        }
+
         static void PropertyChanged(BindableObject bindable, object oldValue, object newValue) {
             if (!(bindable is View view))
                 return;
 
             var eff = view.Effects.FirstOrDefault(e => e is CommandsRoutingEffect);
 
-            if (GetTap(bindable) != null || GetLongTap(bindable) != null) {
+            if (GetTap(bindable) != null || GetLongTap(bindable) != null || GetHold(bindable) != null) {
                 view.InputTransparent = false;
 
                 if (eff != null) return;
