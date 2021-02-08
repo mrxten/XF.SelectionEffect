@@ -47,6 +47,15 @@ namespace XamEffects.Droid {
                 Clickable = false,
                 Focusable = false,
             };
+
+            bool? isInAccessibleTree = (bool?)Element.GetValue(AutomationProperties.IsInAccessibleTreeProperty);
+            if (isInAccessibleTree.HasValue && isInAccessibleTree.Value)
+            {
+                _viewOverlay.Focusable = isInAccessibleTree ?? Control.Focusable;
+                _viewOverlay.ImportantForAccessibility = !isInAccessibleTree.HasValue ? Control.ImportantForAccessibility : (bool)isInAccessibleTree ? ImportantForAccessibility.Yes : ImportantForAccessibility.No;
+                _viewOverlay.ContentDescription = (string)Element.GetValue(AutomationProperties.NameProperty);
+            }
+
             Container.LayoutChange += ViewOnLayoutChange;
 
             if (EnableRipple)
